@@ -1,94 +1,115 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheraCore - Core Activation Coaching</title>
+    <title>TheraCore - Functional Core Coaching</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://jsdelivr.net"></script>
-    
 </head>
 <body>
 
-    <header>
-        <div class="logo-area">
-            <h1><i data-lucide="activity"></i> TheraCore</h1>
-            <p>Core Activation & Movement Coaching</p>
-        </div>
-        <div class="streak-widget">
-            <i data-lucide="flame"></i>
-            <span>7-Day Core Streak!</span>
-        </div>
-    </header>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i data-lucide="activity"></i>
+                thera<span>core</span>
+            </div>
+            <i data-lucide="user" style="color: var(--text-muted); cursor: pointer;"></i>
+        </header>
 
-    <main>
-        <section class="intro-card">
-            <h2>Welcome Back!</h2>
-            <p>Keep your anticipatory core activation strong—consistent practice restores your core’s ability to fire automatically and protect your spine before movement occurs.</p>
+        <!-- Welcome & Daily Progress Section -->
+        <section class="welcome-card">
+            <div class="welcome-header">
+                <div class="welcome-title">
+                    <h1>Welcome back!</h1>
+                    <p>Your movement pattern re-education plan is active.</p>
+                </div>
+                <div class="streak-widget">
+                    <i data-lucide="flame"></i>
+                    <span>7-day core streak!</span>
+                </div>
+            </div>
+            
+            <div class="educational-banner">
+                Keep your <strong>anticipatory core activation</strong> strong—consistent practice restores your core’s ability to fire automatically and protect your spine before movement occurs.
+            </div>
         </section>
 
+        <!-- Interactive Diagram Section -->
         <section class="interactive-section">
-            <!-- Diagram Column -->
+            <h2 class="section-title">Anatomy of Stability</h2>
+            <p class="section-subtitle">Click the hotspots or labels below to isolate the muscular systems protecting your spine.</p>
+
             <div class="diagram-container">
-                <div class="diagram-title">Interactive Core Model</div>
-                
-                <svg class="core-svg-container" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Background Spine Line -->
-                    <line x1="100" y1="40" x2="100" y2="240" stroke="#334155" stroke-width="6" stroke-dasharray="4,4"/>
+                <div class="interactive-diagram" id="diagram-viewport">
+                    <div class="anatomy-vector">
+                        <div class="slings-box"></div>
+                        <div class="cylinder-box"></div>
+                        <div class="spine-line"></div>
+                    </div>
                     
-                    <!-- Ribcage abstraction -->
-                    <ellipse cx="100" cy="80" rx="45" ry="30" fill="none" stroke="#475569" stroke-width="4" />
-                    
-                    <!-- Pelvis abstraction -->
-                    <path d="M 60 210 Q 100 250 140 210 Q 120 190 100 200 Q 80 190 60 210" fill="none" stroke="#475569" stroke-width="4"/>
+                    <div class="hotspot" data-target="global">G</div>
+                    <div class="hotspot" data-target="deep">D</div>
+                    <div class="hotspot" data-target="hub">H</div>
+                </div>
 
-                    <!-- Global System Layer (Outer) -->
-                    <path id="svg-global" class="interactive-node node-global" d="M 50 90 Q 20 150 55 210 L 145 210 Q 180 150 150 90 Z" fill-opacity="0.1" stroke-width="2" onclick="selectSystem('global')"/>
-                    
-                    <!-- Deep System Cylinder (Inner) -->
-                    <rect id="svg-deep" class="interactive-node node-deep" x="70" y="100" width="60" height="100" rx="10" fill-opacity="0.2" stroke-width="2" onclick="selectSystem('deep')"/>
-                    
-                    <!-- Central Hub (Spine/SI Joint) -->
-                    <circle id="svg-hub" class="interactive-node node-hub" cx="100" cy="205" r="14" fill-opacity="0.4" stroke-width="2" onclick="selectSystem('hub')"/>
-                    
-                    <!-- Core Center Indicator Point -->
-                    <circle cx="100" cy="150" r="4" fill="#f97316" />
-                </svg>
-                
-                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 15px; text-align: center;">
-                    <i data-lucide="info" style="width:12px; height:12px; display:inline; vertical-align:middle;"></i> 
-                    Click elements on the diagram or the cards to explore
-                </p>
-            </div>
-
-            <!-- Content Tabs Column -->
-            <div class="details-container">
-                
-                <!-- Central Hub -->
-                <div id="card-hub" class="callout-tab hub-tab" onclick="selectSystem('hub')">
-                    <div class="callout-header">
-                        <div class="icon-wrapper"><i data-lucide="combine"></i></div>
+                <div class="details-panels">
+                    <div class="info-panel active" data-id="hub">
                         <h3>The Central Hub (Spine & Sacroiliac Joint)</h3>
+                        <p>Located where the upper body meets the lower body, the sacroiliac (SI) joint and lumbar spine serve as the center of motion, shock absorption, and power transfer across your body's kinetic chain.</p>
                     </div>
-                    <div class="callout-content">
-                        Located where the upper body meets the lower body, the sacroiliac (SI) joint and lumbar spine serve as the center of motion, shock absorption, and power transfer across your body's kinetic chain.
-                    </div>
-                </div>
 
-                <!-- Deep Local System -->
-                <div id="card-deep" class="callout-tab deep-tab" onclick="selectSystem('deep')">
-                    <div class="callout-header">
-                        <div class="icon-wrapper"><i data-lucide="shield"></i></div>
+                    <div class="info-panel" data-id="deep">
                         <h3>The Deep Local Stabilizing System</h3>
+                        <div class="muscles">Transverse Abdominis, Multifidus, Rotatores, Pelvic Floor, Diaphragm</div>
+                        <p><strong>Function:</strong> These deep tissues form an internal cylinder of stability around your trunk. Rather than creating body movement, their primary job is to stop unwanted motion and brace the spine and SI joint against shearing, friction, torque, and excessive strain as your arms and legs move.</p>
                     </div>
-                    <div class="callout-content">
-                        <strong>Function:</strong> These deep tissues form an internal cylinder of stability around your trunk. Rather than creating body movement, their primary job is to stop unwanted motion and brace the spine and SI joint against shearing, friction, torque, and excessive strain as your arms and legs move.
-                        <div class="muscles-list">Muscles: Transverse Abdominis, Multifidus, Rotatores, Pelvic Floor, and Diaphragm</div>
+
+                    <div class="info-panel" data-id="global">
+                        <h3>The Global Stabilizing System & Muscle Slings</h3>
+                        <div class="muscles">Internal/External Obliques, Latissimus Dorsi, Gluteus Maximus, Hamstrings</div>
+                        <p><strong>Function:</strong> These outer muscle slings transfer loads between your extremities during functional movements, working in synchronization with the deep local core to provide stability and power transmission.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+    </div>
 
-                <!-- Global System -->
+    <script>
+        lucide.createIcons();
 
+        const hotspots = document.querySelectorAll('.hotspot');
+        const panels = document.querySelectorAll('.info-panel');
+        const viewport = document.getElementById('diagram-viewport');
+
+        function activateSystem(systemId) {
+            hotspots.forEach(h => h.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+            viewport.className = 'interactive-diagram';
+
+            const targetHotspot = document.querySelector(`.hotspot[data-target="${systemId}"]`);
+            const targetPanel = document.querySelector(`.info-panel[data-id="${systemId}"]`);
+            
+            if (targetHotspot) targetHotspot.classList.add('active');
+            if (targetPanel) targetPanel.classList.add('active');
+            viewport.classList.add(`active-${systemId}`);
+        }
+
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', () => {
+                activateSystem(hotspot.getAttribute('data-target'));
+            });
+        });
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                activateSystem(panel.getAttribute('data-id'));
+            });
+        });
+
+        activateSystem('hub');
+    </script>
+</body>
+</html>
