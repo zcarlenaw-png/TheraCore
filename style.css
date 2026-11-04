@@ -1,0 +1,202 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Nov 2, 2026, 9:41:56 AM
+    Author     : zcw
+*/
+        :root {
+            --bg-main: #f0f8ff;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --primary-hover: #7dd3fc;
+            --accent: #f97316;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            max-width: 1000px;
+            margin: 0 auto 24px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .logo-area h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-area p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .streak-widget {
+            background-color: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--accent);
+            padding: 10px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .intro-card {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .intro-card h2 {
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .intro-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .interactive-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .interactive-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .diagram-container {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .diagram-title {
+            align-self: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Abstract Core Muscle Diagram Style */
+        .core-svg-container {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .interactive-node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-node:hover, .interactive-node.active {
+            fill-opacity: 0.8;
+            stroke-width: 3px;
+        }
+
+        .node-hub { fill: #6366f1; stroke: #818cf8; }
+        .node-deep { fill: #0ea5e9; stroke: #38bdf8; }
+        .node-global { fill: #10b981; stroke: #34d399; }
+
+        .details-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 100%;
+        }
+
+        .callout-tab {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .callout-tab:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .callout-tab.active {
+            border-color: var(--primary);
+            background-color: rgba(56, 189, 248, 0.05);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+        }
+
+        .callout-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .callout-header h3 {
+            font-size: 1.1rem;
+        }
+
+        .callout-tab.hub-tab .icon-wrapper { color: #818cf8; }
+        .callout-tab.deep-tab .icon-wrapper { color: #38bdf8; }
+        .callout-tab.global-tab .icon-wrapper { color: #34d399; }
+
+        .callout-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .muscles-list {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-style: italic;
+        }
