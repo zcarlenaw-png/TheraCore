@@ -1,202 +1,285 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : Nov 2, 2026, 9:41:56 AM
-    Author     : zcw
-*/
-        :root {
-            --bg-main: #f0f8ff;
-            --bg-card: #1e293b;
-            --primary: #38bdf8;
-            --primary-hover: #7dd3fc;
-            --accent: #f97316;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-        }
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --accent: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --streak-fire: #f97316;
+    --border: #334155;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
-        }
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
 
-        header {
-            max-width: 1000px;
-            margin: 0 auto 24px auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--bg-card);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
-        .logo-area h1 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
 
-        .logo-area p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-        .streak-widget {
-            background-color: rgba(249, 115, 22, 0.1);
-            border: 1px solid var(--accent);
-            padding: 10px 16px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-weight: bold;
-        }
+.logo span {
+    color: var(--accent);
+}
 
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+.welcome-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #111827 100%);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
 
-        .intro-card {
-            background-color: var(--bg-card);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
+.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
 
-        .intro-card h2 {
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
+.welcome-title h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
 
-        .intro-card p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
+.welcome-title p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
 
-        .interactive-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            align-items: start;
-        }
+.streak-widget {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: #fdba74;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
 
-        @media (max-width: 768px) {
-            .interactive-section {
-                grid-template-columns: 1fr;
-            }
-        }
+.streak-widget i {
+    color: var(--streak-fire);
+    animation: pulse 2s infinite;
+}
 
-        .diagram-container {
-            background-color: var(--bg-card);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            min-height: 400px;
-        }
+.educational-banner {
+    background: rgba(56, 189, 248, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
 
-        .diagram-title {
-            align-self: flex-start;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
+.interactive-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
 
-        /* Abstract Core Muscle Diagram Style */
-        .core-svg-container {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-        }
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
 
-        .interactive-node {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
 
-        .interactive-node:hover, .interactive-node.active {
-            fill-opacity: 0.8;
-            stroke-width: 3px;
-        }
+.diagram-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
 
-        .node-hub { fill: #6366f1; stroke: #818cf8; }
-        .node-deep { fill: #0ea5e9; stroke: #38bdf8; }
-        .node-global { fill: #10b981; stroke: #34d399; }
+@media (min-width: 640px) {
+    .diagram-container {
+        grid-template-columns: 240px 1fr;
+    }
+}
 
-        .details-container {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            height: 100%;
-        }
+.interactive-diagram {
+    position: relative;
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-        .callout-tab {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+.anatomy-vector {
+    position: relative;
+    width: 140px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .callout-tab:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
+.spine-line {
+    position: absolute;
+    top: 20px;
+    width: 6px;
+    height: 180px;
+    background: #475569;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
 
-        .callout-tab.active {
-            border-color: var(--primary);
-            background-color: rgba(56, 189, 248, 0.05);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
-        }
+.cylinder-box {
+    position: absolute;
+    top: 60px;
+    width: 70px;
+    height: 100px;
+    border: 2px dashed #64748b;
+    border-radius: 8px;
+    background: rgba(100, 116, 139, 0.05);
+    transition: all 0.3s;
+}
 
-        .callout-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
+.slings-box {
+    position: absolute;
+    top: 45px;
+    width: 110px;
+    height: 140px;
+    border: 2px solid #475569;
+    border-radius: 50% / 30%;
+    background: rgba(71, 85, 105, 0.02);
+    transition: all 0.3s;
+}
 
-        .callout-header h3 {
-            font-size: 1.1rem;
-        }
+.hotspot {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--text-muted);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
 
-        .callout-tab.hub-tab .icon-wrapper { color: #818cf8; }
-        .callout-tab.deep-tab .icon-wrapper { color: #38bdf8; }
-        .callout-tab.global-tab .icon-wrapper { color: #34d399; }
+.hotspot:hover, .hotspot.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
 
-        .callout-content {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
+.hotspot[data-target="hub"] { top: 145px; left: calc(50% - 14px); }
+.hotspot[data-target="deep"] { top: 95px; left: calc(50% - 14px); }
+.hotspot[data-target="global"] { top: 70px; left: calc(50% - 60px); }
 
-        .muscles-list {
-            margin-top: 6px;
-            font-size: 0.85rem;
-            color: var(--primary);
-            font-style: italic;
-        }
+.interactive-diagram.active-hub .spine-line { background: #f43f5e; box-shadow: 0 0 8px #f43f5e; }
+.interactive-diagram.active-deep .cylinder-box { border-color: #10b981; background: rgba(16, 185, 129, 0.1); border-style: solid; }
+.interactive-diagram.active-global .slings-box { border-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+
+.details-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.info-panel {
+    background: #111827;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 4px solid var(--border);
+}
+
+.info-panel:hover {
+    border-color: #475569;
+    border-left-color: #64748b;
+}
+
+.info-panel.active {
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.info-panel.active[data-id="hub"] { border-left-color: #f43f5e; border-color: rgba(244, 63, 94, 0.3); }
+.info-panel.active[data-id="deep"] { border-left-color: #10b981; border-color: rgba(16, 185, 129, 0.3); }
+.info-panel.active[data-id="global"] { border-left-color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); }
+
+.info-panel h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-panel .muscles {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-panel p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.8; }
+}
