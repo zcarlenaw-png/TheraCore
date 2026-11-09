@@ -33,29 +33,40 @@ body {
     gap: 1.5rem;
 }
 
-header {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1rem;
     background-color: #e0f2fe;      
     padding: 1rem 2rem;  
     border-bottom: 1px solid #334155;
 }
 
-.logo {
+.nav-logo {
+    font-family: 'Helvetica';
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.05em;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    color: #38bdf8;
 }
 
-.logo span {
-    color: var(--accent);
+ .nav-links {
+     display: flex;
+     gap: 2rem;                             /* Even spaces between Page 1, 2, 3 */
+     list-style: none;                      /* Removes default bullet points */
+        }
+ .nav-item {
+	 font-family: 'Open Sans';
+	 font-size: 1rem;
+     font-weight: 600;
+     color: #154367;                        
+     text-decoration: none;
+     transition: color 0.2s ease;         
+ }
+
+/* Hover State */
+.nav-item:hover {
+	color: #38bdf8;                        /* Turns blue when hovered */
 }
 
 .welcome-card {
