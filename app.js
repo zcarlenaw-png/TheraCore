@@ -42,10 +42,10 @@ function updateNavbar() {
   const user = getCurrentUser();
   if (user) {
     navAuthLink.textContent = "Profile";
-    navAuthLink.href = "profile.html";
+    navAuthLink.href = "Profile.html";
   } else {
     navAuthLink.textContent = "Sign In";
-    navAuthLink.href = "profile.html";
+    navAuthLink.href = "Profile.html";
   }
 }
 
@@ -120,7 +120,7 @@ function initHomePage() {
   }
 }
 // =========================================
-// Exercises Page Logic (exercises.html)
+// Exercises Page Logic (Exercises.html)
 // =========================================
 function initExercisesPage() {
   const completeBtn = document.getElementById("complete-today-btn");
@@ -137,7 +137,7 @@ function initExercisesPage() {
     const activeUser = getCurrentUser();
     if (!activeUser) {
       alert("Please sign in or create an account first to track your streak!");
-      window.location.href = "profile.html";
+      window.location.href = "Profile.html";
       return;
     }
 
@@ -155,7 +155,7 @@ function initExercisesPage() {
 }
 
 // =========================================
-// Profile & Auth Page Logic (profile.html)
+// Profile & Auth Page Logic (Profile.html)
 // =========================================
 function initProfilePage() {
   const authView = document.getElementById("auth-view");
