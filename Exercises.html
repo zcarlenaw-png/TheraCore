@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exercises | TheraCore</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Clean 2x2 grid for 4 exercises */
+    .exercise-grid-four {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .exercise-grid-four {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Styling to display exercise tutorial images cleanly */
+    .exercise-img-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .exercise-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,41 +56,32 @@
     <p>Consistent Core Conditioning</p>
   </section>
 
-  <!-- Video Grid Container -->
+  <!-- Exercise Grid Container -->
   <main class="container">
     <div class="exercise-banner card">
       <div>
         <h3>Guided Physiotherapy Routines</h3>
-        <p>Watch each movement demonstration carefully, focusing on controlled breathing and pelvic alignment. Mark a session complete to build your weekly streak.</p>
+        <p>Follow each movement demonstration carefully, focusing on controlled breathing and pelvic alignment. Mark a session complete to build your weekly streak.</p>
       </div>
       <button id="complete-today-btn" class="btn btn-primary">Mark Today Complete</button>
     </div>
 
-    <section class="video-grid" id="video-grid">
-      <!-- 10 Exercise Placeholder Video Cards -->
+    <section class="exercise-grid-four" id="video-grid">
+      <!-- Exercise 1 -->
       <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 01 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 03:15</span>
-          </div>
+        <div class="exercise-img-wrapper">
+          <img src="tabletop.jpg" alt="Tabletop Pose" />
         </div>
         <div class="video-info">
-          <h4>1. Diaphragmatic Core Bracing</h4>
-          <p>Learn how to engage the transverse abdominis while maintaining steady ribcage breathing.</p>
+          <h4>1. Tabletop Pose</h4>
+          <p>Take deep breaths in the position to engage your deep transverse abdominis while maintaining a neutral lower back.</p>
         </div>
       </article>
 
+      <!-- Exercise 2 -->
       <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 02 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 04:00</span>
-          </div>
+        <div class="exercise-img-wrapper">
+          <img src="deadbug.jpg" alt="Dead Bug Exercise Demonstration" />
         </div>
         <div class="video-info">
           <h4>2. Dead Bug Progression</h4>
@@ -65,123 +89,25 @@
         </div>
       </article>
 
+      <!-- Exercise 3 -->
       <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 03 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 03:45</span>
-          </div>
+        <div class="exercise-img-wrapper">
+          <img src="bearhover.jpg" alt="Bear Hover Exercise Demonstration" />
         </div>
         <div class="video-info">
-          <h4>3. Bird-Dog Spinal Stability</h4>
-          <p>Strengthen the erector spinae and glutes while resisting hip rotation on all fours.</p>
+          <h4>3. Bear Hover Stability</h4>
+          <p>Strengthen your core's ability to support your weight on all fours.</p>
         </div>
       </article>
 
+      <!-- Exercise 4 -->
       <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 04 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 04:20</span>
-          </div>
+        <div class="exercise-img-wrapper">
+          <img src="glutebridge.jpg" alt="Glute Bridge Exercise Demonstration" />
         </div>
         <div class="video-info">
           <h4>4. Glute Bridge with Pelvic Tilt</h4>
           <p>Isolate the gluteus maximus and reduce lumbar strain through proper posterior pelvic positioning.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 05 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 03:50</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>5. Modified Side Plank</h4>
-          <p>Target the obliques and gluteus medius to stabilize the pelvis and spine laterally.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 06 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 04:10</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>6. Pallof Anti-Rotation Press</h4>
-          <p>Train deep oblique resistance against rotational torque for athletic and everyday twisting.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 07 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 03:30</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>7. Supine Heel Slides</h4>
-          <p>Low-impact lower abdominal activation designed for gentle spinal rehabilitation.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 08 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 04:45</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>8. Forearm Plank with Rib Tuck</h4>
-          <p>Develop full-body endurance across the rectus abdominis and transverse core wall.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 09 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 03:55</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>9. Quadruped Bear Hover</h4>
-          <p>Engage deep core stabilizers and shoulder girdle control in a neutral spine hover.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-placeholder">
-          <div class="play-circle">&#9658;</div>
-          <span class="video-badge">Video 10 &bull; Upload Pending</span>
-          <div class="player-bar">
-            <span class="bar-progress"></span>
-            <span class="bar-time">00:00 / 05:00</span>
-          </div>
-        </div>
-        <div class="video-info">
-          <h4>10. Single-Leg Balance &amp; Reach</h4>
-          <p>Integrate core, glute, and ankle stability for real-world walking and athletic agility.</p>
         </div>
       </article>
     </section>
