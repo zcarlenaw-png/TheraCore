@@ -1,124 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheraCore - Functional Core Coaching</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://jsdelivr.net"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheraCore | Physiotherapy & Core Coaching</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <nav class="navbar">
-            <a href="index.html" class="nav-logo">TheraCore</a>
-            <ul class="nav-links">
-                <li><a href="Exercises.html" class="nav-item">Exercises</a></li>
-            <li><a href="Profile.html" class="nav-item">Profile</a></li>
-                     <!-- Add later
-                <li class="nav-item">
-                    <a href="index.html#about-project" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" id="account-nav-link" class="nav-link">Sign In</a>
-                </li>
-                -->
-            </ul>
-        </nav>
-        </header>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">TheraCore</a>
+    <nav class="nav-links">
+      <a href="exercises.html">Exercises</a>
+      <a href="profile.html" id="nav-auth-link">Sign In</a>
+    </nav>
+  </header>
 
-        <!-- Welcome & Daily Progress Section -->
-        <section class="welcome-card">
-            <div class="welcome-header">
-                <div class="welcome-title">
-                    <h1>Welcome back!</h1>
-                </div>
-                <div class="streak-widget">
-                    <i data-lucide="flame"></i>
-                    <span>7-day core streak!</span>
-                </div>
-            </div>
-            
-            <div class="educational-banner">
-                Keep your <strong>anticipatory core activation</strong> strong—consistent practice restores your core’s ability to fire automatically and protect your spine before movement occurs.
-            </div>
-        </section>
-
-        <!-- Interactive Diagram Section -->
-        <section class="interactive-section">
-            <h2 class="section-title">Anatomy of Stability</h2>
-            <p class="section-subtitle">Click the hotspots or labels below to isolate the muscular systems protecting your spine.</p>
-
-            <div class="diagram-container">
-                <div class="interactive-diagram" id="diagram-viewport">
-                    <div class="anatomy-vector">
-                        <div class="slings-box"></div>
-                        <div class="cylinder-box"></div>
-                        <div class="spine-line"></div>
-                    </div>
-                    
-                    <div class="hotspot" data-target="global">G</div>
-                    <div class="hotspot" data-target="deep">D</div>
-                    <div class="hotspot" data-target="hub">H</div>
-                </div>
-
-                <div class="details-panels">
-                    <div class="info-panel active" data-id="hub">
-                        <h3>The Central Hub (Spine & Sacroiliac Joint)</h3>
-                        <p>Located where the upper body meets the lower body, the sacroiliac (SI) joint and lumbar spine serve as the center of motion, shock absorption, and power transfer across your body's kinetic chain.</p>
-                    </div>
-
-                    <div class="info-panel" data-id="deep">
-                        <h3>The Deep Local Stabilizing System</h3>
-                        <div class="muscles">Transverse Abdominis, Multifidus, Rotatores, Pelvic Floor, Diaphragm</div>
-                        <p><strong>Function:</strong> These deep tissues form an internal cylinder of stability around your trunk. Rather than creating body movement, their primary job is to stop unwanted motion and brace the spine and SI joint against shearing, friction, torque, and excessive strain as your arms and legs move.</p>
-                    </div>
-
-                    <div class="info-panel" data-id="global">
-                        <h3>The Global Stabilizing System & Muscle Slings</h3>
-                        <div class="muscles">Internal/External Obliques, Latissimus Dorsi, Gluteus Maximus, Hamstrings</div>
-                        <p><strong>Function:</strong> These outer muscle slings transfer loads between your extremities during functional movements, working in synchronization with the deep local core to provide stability and power transmission.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Full-Screen Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>TheraCore</h1>
+      <p>Building a strong core, one day at a time</p>
     </div>
+    <a href="#dashboard" class="scroll-indicator" aria-label="Scroll down">&#8595;</a>
+  </section>
 
-    <script>
-        lucide.createIcons();
+  <!-- Main Content -->
+  <main id="dashboard" class="container">
+    
+    <!-- Dynamic Welcome Header -->
+    <section class="welcome-section">
+      <h2 id="welcome-heading">Welcome to TheraCore</h2>
+      <p class="subtitle">Engage your deep stabilizers for resilient daily movement and athletic power.</p>
+    </section>
 
-        const hotspots = document.querySelectorAll('.hotspot');
-        const panels = document.querySelectorAll('.info-panel');
-        const viewport = document.getElementById('diagram-viewport');
+    <!-- Weekly Streak Widget -->
+    <section class="card streak-card">
+      <div class="streak-header">
+        <span id="streak-text">Start your streak</span>
+        <!-- Flame SVG Icon -->
+        <svg id="flame-icon" class="flame-icon inactive" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+          <path d="M13.5 0.67s0.74 2.65 0.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l0.03-0.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5 0.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-0.36 3.6-1.21 4.62-2.58 0.39 1.29 0.59 2.65 0.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+        </svg>
+      </div>
 
-        function activateSystem(systemId) {
-            hotspots.forEach(h => h.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
-            viewport.className = 'interactive-diagram';
+      <div class="week-tracker" id="week-tracker">
+        <div class="day-item" data-day="Mon">
+          <div class="day-circle"></div>
+          <span>Mon</span>
+        </div>
+        <div class="day-item" data-day="Tue">
+          <div class="day-circle"></div>
+          <span>Tue</span>
+        </div>
+        <div class="day-item" data-day="Wed">
+          <div class="day-circle"></div>
+          <span>Wed</span>
+        </div>
+        <div class="day-item" data-day="Thu">
+          <div class="day-circle"></div>
+          <span>Thu</span>
+        </div>
+        <div class="day-item" data-day="Fri">
+          <div class="day-circle"></div>
+          <span>Fri</span>
+        </div>
+        <div class="day-item" data-day="Sat">
+          <div class="day-circle"></div>
+          <span>Sat</span>
+        </div>
+        <div class="day-item" data-day="Sun">
+          <div class="day-circle"></div>
+          <span>Sun</span>
+        </div>
+      </div>
+      <p class="streak-hint" id="streak-hint">Sign in and complete an exercise on the Exercises page to log today's progress.</p>
+    </section>
 
-            const targetHotspot = document.querySelector(`.hotspot[data-target="${systemId}"]`);
-            const targetPanel = document.querySelector(`.info-panel[data-id="${systemId}"]`);
+    <!-- Core Anatomy Diagram Section -->
+    <section class="anatomy-section">
+      <h3>Core Musculature Anatomy</h3>
+      <p class="section-desc">Understanding the front and back pillars of your core helps you activate the right muscles during movement.</p>
+
+      <div class="diagram-container card">
+        <!-- Front View SVG -->
+        <div class="diagram-box">
+          <h4>Anterior (Front) View</h4>
+          <svg viewBox="0 0 360 400" class="anatomy-svg" role="img" aria-label="Front view of core muscles">
+            <!-- Torso Silhouette -->
+            <path d="M115,40 C135,30 225,30 245,40 L265,130 L245,230 L255,340 L190,340 L180,275 L170,340 L105,340 L115,230 L95,130 Z" fill="#e6f0fa" stroke="#90bce8" stroke-width="2.5"/>
             
-            if (targetHotspot) targetHotspot.classList.add('active');
-            if (targetPanel) targetPanel.classList.add('active');
-            viewport.classList.add(`active-${systemId}`);
-        }
+            <!-- Transverse Abdominis (Deep horizontal corset layer) -->
+            <rect x="132" y="135" width="96" height="85" rx="12" fill="#b3d4f5" opacity="0.75"/>
+            
+            <!-- Obliques (Side diagonal muscles) -->
+            <path d="M115,130 L138,140 L142,225 L118,215 Z" fill="#5b9bd5"/>
+            <path d="M245,130 L222,140 L218,225 L242,215 Z" fill="#5b9bd5"/>
 
-        hotspots.forEach(hotspot => {
-            hotspot.addEventListener('click', () => {
-                activateSystem(hotspot.getAttribute('data-target'));
-            });
-        });
+            <!-- Rectus Abdominis (Central segmented abs) -->
+            <g fill="#2b6cb0" stroke="#e6f0fa" stroke-width="2">
+              <rect x="152" y="122" width="26" height="24" rx="5"/>
+              <rect x="182" y="122" width="26" height="24" rx="5"/>
+              <rect x="152" y="148" width="26" height="24" rx="5"/>
+              <rect x="182" y="148" width="26" height="24" rx="5"/>
+              <rect x="152" y="174" width="26" height="24" rx="5"/>
+              <rect x="182" y="174" width="26" height="24" rx="5"/>
+              <path d="M152,200 L178,200 L178,238 L164,248 L152,238 Z"/>
+              <path d="M182,200 L208,200 L208,238 L196,248 L182,238 Z"/>
+            </g>
 
-        panels.forEach(panel => {
-            panel.addEventListener('click', () => {
-                activateSystem(panel.getAttribute('data-id'));
-            });
-        });
+            <!-- Callout Lines & Labels -->
+            <!-- Rectus Abdominis -->
+            <line x1="165" y1="134" x2="75" y2="105" stroke="#1e3a5f" stroke-width="1.5"/>
+            <circle cx="165" cy="134" r="3" fill="#1e3a5f"/>
+            <text x="10" y="100" class="svg-label">Rectus</text>
+            <text x="10" y="114" class="svg-label">Abdominis</text>
 
-        activateSystem('hub');
-    </script>
+            <!-- Transverse Abdominis -->
+            <line x1="145" y1="185" x2="75" y2="185" stroke="#1e3a5f" stroke-width="1.5"/>
+            <circle cx="145" cy="185" r="3" fill="#1e3a5f"/>
+            <text x="10" y="180" class="svg-label">Transverse</text>
+            <text x="10" y="194" class="svg-label">Abdominis</text>
+
+            <!-- Obliques -->
+            <line x1="234" y1="175" x2="285" y2="160" stroke="#1e3a5f" stroke-width="1.5"/>
+            <circle cx="234" cy="175" r="3" fill="#1e3a5f"/>
+            <text x="288" y="164" class="svg-label">Obliques</text>
+          </svg>
+        </div>
+
+        <!-- Back View SVG -->
+        <div class="diagram-box">
+          <h4>Posterior (Back) View</h4>
+          <svg viewBox="0 0 360 400" class="anatomy-svg" role="img" aria-label="Back view of core muscles">
+            <!-- Torso Silhouette -->
+            <path d="M115,40 C135,30 225,30 245,40 L265,130 L245,230 L255,340 L190,340 L180,275 L170,340 L105,340 L115,230 L95,130 Z" fill="#e6f0fa" stroke="#90bce8" stroke-width="2.5"/>
+            
+            <!-- Spine Line -->
+            <line x1="180" y1="45" x2="180" y2="235" stroke="#90bce8" stroke-width="3" stroke-dasharray="4,3"/>
+
+            <!-- Erector Spinae (Vertical columns along spine) -->
+            <path d="M160,65 C155,120 155,180 162,225 L176,225 L176,65 Z" fill="#4a89dc"/>
+            <path d="M200,65 C205,120 205,180 198,225 L184,225 L184,65 Z" fill="#4a89dc"/>
+
+            <!-- Gluteus (Maximus & Medius) -->
+            <path d="M120,225 C120,205 176,210 178,235 L178,285 C150,295 115,275 120,225 Z" fill="#2b6cb0"/>
+            <path d="M240,225 C240,205 184,210 182,235 L182,285 C210,295 245,275 240,225 Z" fill="#2b6cb0"/>
+
+            <!-- Callout Lines & Labels -->
+            <!-- Erector Spinae -->
+            <line x1="195" y1="130" x2="275" y2="115" stroke="#1e3a5f" stroke-width="1.5"/>
+            <circle cx="195" cy="130" r="3" fill="#1e3a5f"/>
+            <text x="278" y="112" class="svg-label">Erector</text>
+            <text x="278" y="126" class="svg-label">Spinae</text>
+
+            <!-- Gluteus -->
+            <line x1="215" y1="255" x2="275" y2="255" stroke="#1e3a5f" stroke-width="1.5"/>
+            <circle cx="215" cy="255" r="3" fill="#1e3a5f"/>
+            <text x="278" y="259" class="svg-label">Gluteus</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Muscle Function & Joint Protection Cards -->
+      <div class="muscle-cards-grid">
+        <article class="card muscle-card">
+          <h4>Rectus Abdominis</h4>
+          <p><strong>Function:</strong> Flexes the lumbar spine forward and helps tilt the pelvis posteriorly during dynamic movements like sitting up or sprinting.</p>
+          <p><strong>Joints Protected:</strong> Stabilizes the lumbar spine and sacroiliac (SI) joints against excessive hyperextension under load.</p>
+        </article>
+
+        <article class="card muscle-card">
+          <h4>Obliques (Internal &amp; External)</h4>
+          <p><strong>Function:</strong> Control trunk rotation, lateral side-bending, and anti-rotation forces when carrying uneven loads or swinging.</p>
+          <p><strong>Joints Protected:</strong> Shields the thoracic and lumbar intervertebral discs from shear and rotational strain.</p>
+        </article>
+
+        <article class="card muscle-card">
+          <h4>Transverse Abdominis</h4>
+          <p><strong>Function:</strong> Acts as the body's natural deep weightlifting belt by compressing the abdominal cavity and increasing intra-abdominal pressure.</p>
+          <p><strong>Joints Protected:</strong> Provides foundational segmental stability to the lumbar vertebrae and pelvis before limb movement begins.</p>
+        </article>
+
+        <article class="card muscle-card">
+          <h4>Gluteus (Maximus &amp; Medius)</h4>
+          <p><strong>Function:</strong> Drives hip extension, abduction, and pelvic leveling during walking, running, squatting, and climbing stairs.</p>
+          <p><strong>Joints Protected:</strong> Protects the hip joints, lower back, and knees by preventing inward knee collapse and lumbar compensation.</p>
+        </article>
+
+        <article class="card muscle-card">
+          <h4>Erector Spinae</h4>
+          <p><strong>Function:</strong> Extends and straightens the vertebral column while controlling forward flexion when bending or lifting objects.</p>
+          <p><strong>Joints Protected:</strong> Supports the entire spinal column and facet joints, maintaining healthy upright posture against gravity.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 TheraCore Physiotherapy Coaching. Move with stability.</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
